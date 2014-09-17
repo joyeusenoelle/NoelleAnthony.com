@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+@font-face { font-family: Fontin; src: url('fonts/Fontin/Fontin_Sans_R_45b.otf'); }
+@font-face { font-family: Fontin; font-weight: bold; src: url('fonts/Fontin/Fontin_Sans_B_45b.otf'); }
+@font-face { font-family: Fontin; font-style: italic; src: url('fonts/Fontin/Fontin_Sans_I_45b.otf'); }
+@font-face { font-family: Fontin; font-weight: bold; font-style: italic; src: url('fonts/Fontin/Fontin_Sans_BI_45b.otf'); }
+@font-face { font-family: Fontin; font-variant: small-caps; src: url('fonts/Fontin/Fontin_Sans_SC_45b.otf'); }
+@font-face { font-family: Fertigo; src: url('fonts/Fertigo_PRO.otf'); }
+@font-face { font-family: Jura; src: url('fonts/Jura/Jura-Regular.ttf'); }
+@font-face { font-family: Jura; font-weight: bold; src: url('fonts/Jura/Jura-Bold.ttf'); }
+@font-face { font-family: Jura; font-style: italic; src: url('fonts/Jura/Jura-Italic.ttf'); }
+@font-face { font-family: Jura; font-weight: bold; font-style: italic; src: url('fonts/Jura/Jura-BoldItalic.ttf'); }
+@font-face { font-family: Fanwood; src: url('fonts/Fanwood.otf'); }
+@font-face { font-family: Fanwood; font-style: italic; src: url('fonts/Fanwood-Italic.otf'); }
+@font-face { font-family: Playtime; src: url('fonts/playtime.ttf'); }
+@font-face { font-family: Honey; src: url('fonts/HoneyScript-Light.ttf'); }
+
+html {
+	font-size: 10px;
+}
+
+body {
+	background-color: #000;
+	font-family: Jura;
+}
+
+body.query {
+	background-color: #fff;
+}
+
+h1#title { 
+	color: #00CC00;
+	font-family: Honey;
+	font-size: 4.8em;
+	font-weight: 400;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+div#subtitle {
+	color: #009900;
+	font-size: 2.4em;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+div#text, div#cursor {
+	color: #009900;
+	font-size: 1.6em;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 75%;
+}
+
+div#cursor {
+	margin-top: 10px;
+	text-shadow: 1px 1px #006600;
+}
+
+div#subtext {
+	color: #006600;
+	font-size: 1.4em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	max-width: 75%;
+}
+
+strong {
+	color: #22BB22;
+}
+
+a {
+	color: #2222BB;
+}
+
+a:hover {
+	color: #4444DD;
+}
+
+a:visited { 
+	color: #BB22BB; 
+}
+
+/* Query form cells */
+
+div.form-row {
+	clear: both;
+}
+
+div.form-row:nth-child(2) {
+	background-color: #AAAAAA;
+}
+
+div.form-cell-left {
+	float: left;
+	padding-right: 10px;
+	width: 100px;
+}
+
+div.form-cell-right {
+	float: left;
+	padding-left: 10px;
+}
