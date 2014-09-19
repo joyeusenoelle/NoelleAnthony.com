@@ -24,7 +24,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Noëlle Anthony - <?php if($post) { echo "Service Query submitted!"; } else { echo "Submit a Service Query!"; } ?></title>
 <link rel="stylesheet" type="text/css" href="style.css">
-<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="jquery-1.11.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$.valHooks.textarea = {
 		get: function( elem ) {
@@ -64,17 +64,18 @@
 		$("#cursor").toggle();
 	},500));
 	$(document).ready(function() {
-		$("#form-submit").on("click", function() {
-			event.preventDefault;
-			if (formval()) {
-				/*var qname = $.trim($('#query_name').val());
-				var qmail = $.trim($('#query_email').val());
-				var qtext = $.trim($('#query_text').val());
-				var qtype = $('#query_type').val();*/
-				alert($('#ndaquery').serialize());
-			}
-			return false;
-		});
+	});
+	$("#ndaquery").on("submit", function() {
+		alert("Clicked");
+		event.preventDefault;
+		if (formval()) {
+			/*var qname = $.trim($('#query_name').val());
+			var qmail = $.trim($('#query_email').val());
+			var qtext = $.trim($('#query_text').val());
+			var qtype = $('#query_type').val();*/
+			alert($('#ndaquery').serialize());
+		}
+		return false;
 	});
 </script>
 </head>
@@ -101,8 +102,8 @@
 		<div class="form-cell form-cell-right">
 			<input type="text" name="query_email" size="40" value="">
 		</div>
-	</div>
-	<input type="submit" id="form-submit">
+	</div><br>
+	<input type="submit" id="form-submit" style="clear: both;">
 	</form>
 <?php } ?>
 	
