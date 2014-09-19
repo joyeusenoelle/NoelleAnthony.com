@@ -26,10 +26,56 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
+	$.valHooks.textarea = {
+		get: function( elem ) {
+			return elem.value.replace( /\r?\n/g, "\r\n" );
+		}
+	};
+	function formval() {
+		var qname = $.trim($('#query_name').val());
+		var qmail = $.trim($('#query_email').val());
+		var qtext = $.trim($('#query_text').val());
+		var qtype = $('#query_type').val();
+		var errorstr = "";
+		var haserrors = false;
+		var re = /^[A-Z0-9._%+!#-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/i;
+		if(qname == "") {
+			haserrors = true;
+			errorstr += "\n* Name must not be blank";
+		}
+		if(qmail == "") {
+			haserrors = true;
+			errorstr += "\n* Email must not be blank";
+		} else if (qmail.search(re) == -1) {
+			haserrors = true;
+			errorstr += "\n* Email must be well-formed";
+		}
+		if(qtext == "") {
+			haserrors = true;
+			errorstr += "\n* Query text must not be blank";
+		}
+		if(haserrors == true) {
+			alert("Please fill out the form completely before submitting.\n" + errorstr);
+		}
+		return !haserrors;
+	}
 	var tmt;
 	$(tmt = setInterval(function(){
 		$("#cursor").toggle();
 	},500));
+	$(document).ready(function() {
+		$("#form-submit").on("click", function() {
+			event.preventDefault;
+			if (formval()) {
+				/*var qname = $.trim($('#query_name').val());
+				var qmail = $.trim($('#query_email').val());
+				var qtext = $.trim($('#query_text').val());
+				var qtype = $('#query_type').val();*/
+				alert($('#ndaquery').serialize());
+			}
+			return false;
+		});
+	});
 </script>
 </head>
 <body class="query">
@@ -56,7 +102,7 @@
 			<input type="text" name="query_email" size="40" value="">
 		</div>
 	</div>
-	<input type="submit">
+	<input type="submit" id="form-submit">
 	</form>
 <?php } ?>
 	
